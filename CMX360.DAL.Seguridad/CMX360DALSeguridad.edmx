@@ -1,0 +1,1358 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="CMX360SeguridadModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <Function Name="spCategoriaImagenCn" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="spFPSAplicacionCn" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="spFPSaUsuarioAlmacenDel" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="usrAPP" Type="varchar" Mode="In" />
+          <Parameter Name="IdAlmacen" Type="int" Mode="In" />
+        </Function>
+        <Function Name="spFPSaUsuarioAlmacenIn" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="usrAPP" Type="varchar" Mode="In" />
+          <Parameter Name="IdAlmacen" Type="int" Mode="In" />
+          <Parameter Name="BanActivo" Type="bit" Mode="In" />
+          <Parameter Name="UsrAlta" Type="varchar" Mode="In" />
+        </Function>
+        <Function Name="spImagenMenuCn" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="idCategoria" Type="int" Mode="In" />
+        </Function>
+        <Function Name="spIVSUsuariosIn" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="usrAPP" Type="varchar" Mode="In" />
+          <Parameter Name="nomNombre" Type="varchar" Mode="In" />
+          <Parameter Name="nomAPaterno" Type="varchar" Mode="In" />
+          <Parameter Name="nomAMaterno" Type="varchar" Mode="In" />
+          <Parameter Name="correo" Type="varchar" Mode="In" />
+          <Parameter Name="ProviderKey" Type="varchar" Mode="In" />
+          <Parameter Name="Provider" Type="varchar" Mode="In" />
+          <Parameter Name="usrAlta" Type="varchar" Mode="In" />
+          <Parameter Name="Id" Type="varchar" Mode="In" />
+          <Parameter Name="contraseña" Type="varchar" Mode="In" />
+          <Parameter Name="LlaveActicacion" Type="varchar" Mode="In" />
+          <Parameter Name="FechaCadudaLlave" Type="datetime" Mode="In" />
+          <Parameter Name="FechaCorreoValidado" Type="datetime" Mode="In" />
+          <Parameter Name="CorreoValidado" Type="bit" Mode="In" />
+        </Function>
+        <Function Name="spIVXLoginLocal" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="usuario" Type="varchar" Mode="In" />
+          <Parameter Name="PASSWORD" Type="varchar" Mode="In" />
+        </Function>
+        <Function Name="spIVXUsuariosCn" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="usuario" Type="varchar" Mode="In" />
+        </Function>
+        <Function Name="spPaginaPermisoRolCn" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="idPagina" Type="bigint" Mode="In" />
+        </Function>
+        <Function Name="spPaginaPermisoRolEl" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="idRol" Type="bigint" Mode="In" />
+          <Parameter Name="idPagina" Type="bigint" Mode="In" />
+          <Parameter Name="idPermiso" Type="bigint" Mode="In" />
+        </Function>
+        <Function Name="spPaginasRolCn" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="idRol" Type="int" Mode="In" />
+        </Function>
+        <Function Name="spRESCambioContrasenia" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="correo" Type="varchar" Mode="In" />
+          <Parameter Name="usrAPP" Type="varchar" Mode="In" />
+        </Function>
+        <Function Name="spRESCnaPermisoEspecial" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="usrAPP" Type="varchar" Mode="In" />
+        </Function>
+        <Function Name="spRESCnaRolPaginaPermiso" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="idRol" Type="bigint" Mode="In" />
+          <Parameter Name="idPagina" Type="bigint" Mode="In" />
+        </Function>
+        <Function Name="spRESCnaRolUsuario" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="usrAPP" Type="varchar" Mode="In" />
+          <Parameter Name="idAplicacion" Type="int" Mode="In" />
+        </Function>
+        <Function Name="spRESCncAplicacion" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="idAplicacion" Type="bigint" Mode="In" />
+        </Function>
+        <Function Name="spRESCncPagina" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="idPagina" Type="bigint" Mode="In" />
+          <Parameter Name="nomPagina" Type="varchar" Mode="In" />
+          <Parameter Name="idAplicacion" Type="bigint" Mode="In" />
+        </Function>
+        <Function Name="spRESCncPaginaPermiso" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="idPagina" Type="bigint" Mode="In" />
+        </Function>
+        <Function Name="spRESCncPermiso" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="idPermiso" Type="bigint" Mode="In" />
+        </Function>
+        <Function Name="spRESCncRol" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="idRol" Type="bigint" Mode="In" />
+        </Function>
+        <Function Name="spRESCtaAplicacionRol" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="idAplicacion" Type="bigint" Mode="In" />
+        </Function>
+        <Function Name="spRESCtaBackProcess" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="idAplicacion" Type="int" Mode="In" />
+          <Parameter Name="banActivo" Type="bit" Mode="In" />
+        </Function>
+        <Function Name="spRESCtaBackProcessLog" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="idBackProcess" Type="int" Mode="In" />
+        </Function>
+        <Function Name="spRESCtaBackProcessLogUltimaEjecucion" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="idBackProcess" Type="int" Mode="In" />
+        </Function>
+        <Function Name="spRESCtaLogError" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="idAplicacion" Type="bit" Mode="In" />
+        </Function>
+        <Function Name="spRESCtaPermisoEspecial" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="banActivo" Type="bit" Mode="In" />
+        </Function>
+        <Function Name="spRESCtcAplicacion" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="banActivo" Type="bit" Mode="In" />
+        </Function>
+        <Function Name="spRESCtcPagina" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="idAplicacion" Type="bigint" Mode="In" />
+          <Parameter Name="banActivo" Type="bit" Mode="In" />
+        </Function>
+        <Function Name="spRESCtcPaginaPermiso" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="banActivo" Type="bit" Mode="In" />
+        </Function>
+        <Function Name="spRESCtcPermiso" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="banActivo" Type="bit" Mode="In" />
+        </Function>
+        <Function Name="spRESCtcRol" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="banActivo" Type="bit" Mode="In" />
+        </Function>
+        <Function Name="spRESCtUsuarios" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="idAplicacion" Type="bigint" Mode="In" />
+          <Parameter Name="banActivo" Type="bit" Mode="In" />
+        </Function>
+        <Function Name="spRESDeaEstautsBackProcess" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="idBackProcess" Type="int" Mode="In" />
+        </Function>
+        <Function Name="spRESDelaRolUsuario" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="idRol" Type="bigint" Mode="In" />
+          <Parameter Name="usrAPP" Type="varchar" Mode="In" />
+        </Function>
+        <Function Name="spRESEdaBackProcess" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="idBackProcess" Type="int" Mode="In" />
+          <Parameter Name="idAplicacion" Type="bigint" Mode="In" />
+          <Parameter Name="nomProceso" Type="varchar" Mode="In" />
+          <Parameter Name="xmlParamteros" Type="text" Mode="In" />
+          <Parameter Name="nomLibreria" Type="varchar" Mode="In" />
+          <Parameter Name="banActivo" Type="bit" Mode="In" />
+        </Function>
+        <Function Name="spRESEdaEstautsBackProcess" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="idBackProcess" Type="int" Mode="In" />
+          <Parameter Name="banProceso" Type="bigint" Mode="In" />
+        </Function>
+        <Function Name="spRESEdaPermisoEspecial" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="usrAPP" Type="varchar" Mode="In" />
+          <Parameter Name="idPagina" Type="bigint" Mode="In" />
+          <Parameter Name="idPermiso" Type="bigint" Mode="In" />
+          <Parameter Name="banActivo" Type="bit" Mode="In" />
+          <Parameter Name="usrMod" Type="varchar" Mode="In" />
+        </Function>
+        <Function Name="spRESEdaRolPaginaPermiso" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="idRol" Type="bigint" Mode="In" />
+          <Parameter Name="idPagina" Type="bigint" Mode="In" />
+          <Parameter Name="idPermiso" Type="bigint" Mode="In" />
+          <Parameter Name="banActivo" Type="bit" Mode="In" />
+          <Parameter Name="usrMod" Type="varchar" Mode="In" />
+        </Function>
+        <Function Name="spRESEdcAplicacion" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="idAplicacion" Type="bigint" Mode="In" />
+          <Parameter Name="nomAplicacion" Type="varchar" Mode="In" />
+          <Parameter Name="xmlParametros" Type="varchar(max)" Mode="In" />
+          <Parameter Name="banActivo" Type="bit" Mode="In" />
+          <Parameter Name="usrMod" Type="varchar" Mode="In" />
+        </Function>
+        <Function Name="spRESEdcPagina" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="idPagina" Type="bigint" Mode="In" />
+          <Parameter Name="idAplicacion" Type="bigint" Mode="In" />
+          <Parameter Name="nomPagina" Type="varchar" Mode="In" />
+          <Parameter Name="idPaginaPadre" Type="bigint" Mode="In" />
+          <Parameter Name="nomMenu" Type="varchar" Mode="In" />
+          <Parameter Name="url" Type="varchar" Mode="In" />
+          <Parameter Name="imgMenu" Type="varchar" Mode="In" />
+          <Parameter Name="banActivo" Type="bit" Mode="In" />
+          <Parameter Name="usrMod" Type="varchar" Mode="In" />
+        </Function>
+        <Function Name="spRESEdcPaginaPermiso" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="idPagina" Type="bigint" Mode="In" />
+          <Parameter Name="idPermiso" Type="bigint" Mode="In" />
+          <Parameter Name="banActivo" Type="bit" Mode="In" />
+          <Parameter Name="usrMod" Type="varchar" Mode="In" />
+        </Function>
+        <Function Name="spRESEdcPermiso" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="idPermiso" Type="bigint" Mode="In" />
+          <Parameter Name="nomPermiso" Type="varchar" Mode="In" />
+          <Parameter Name="banActivo" Type="bit" Mode="In" />
+          <Parameter Name="usrMod" Type="varchar" Mode="In" />
+        </Function>
+        <Function Name="spRESEdcRol" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="idRol" Type="bigint" Mode="In" />
+          <Parameter Name="nomRol" Type="varchar" Mode="In" />
+          <Parameter Name="banActivo" Type="bit" Mode="In" />
+          <Parameter Name="usrMod" Type="varchar" Mode="In" />
+        </Function>
+        <Function Name="spRESEdUsuarios" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="usrAPP" Type="varchar" Mode="In" />
+          <Parameter Name="nomNombre" Type="varchar" Mode="In" />
+          <Parameter Name="nomAPaterno" Type="varchar" Mode="In" />
+          <Parameter Name="nomAMaterno" Type="varchar" Mode="In" />
+          <Parameter Name="banActivo" Type="bit" Mode="In" />
+          <Parameter Name="usrMod" Type="varchar" Mode="In" />
+        </Function>
+        <Function Name="spRESICnPaginasXUsuario" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="usrAPP" Type="varchar" Mode="In" />
+          <Parameter Name="idAplicacion" Type="int" Mode="In" />
+        </Function>
+        <Function Name="spRESICnPermisosPaginaXUsuario" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="nomPagina" Type="varchar" Mode="In" />
+          <Parameter Name="usrAPP" Type="varchar" Mode="In" />
+          <Parameter Name="idAplicacion" Type="bigint" Mode="In" />
+        </Function>
+        <Function Name="spRESInaAplicacionRol" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="idAplicacion" Type="bigint" Mode="In" />
+          <Parameter Name="idRol" Type="bigint" Mode="In" />
+        </Function>
+        <Function Name="spRESInaBackProcess" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="idBackProcess" Type="int" Mode="InOut" />
+          <Parameter Name="idAplicacion" Type="bigint" Mode="In" />
+          <Parameter Name="nomProceso" Type="varchar" Mode="In" />
+          <Parameter Name="xmlParamteros" Type="text" Mode="In" />
+          <Parameter Name="nomLibreria" Type="varchar" Mode="In" />
+        </Function>
+        <Function Name="spRESInaBackProcessLog" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="idaBackProcessLog" Type="bigint" Mode="InOut" />
+          <Parameter Name="idBackProcess" Type="int" Mode="In" />
+          <Parameter Name="Resultado" Type="text" Mode="In" />
+        </Function>
+        <Function Name="spRESInaLogError" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="idLogError" Type="bigint" Mode="InOut" />
+          <Parameter Name="idCapa" Type="int" Mode="In" />
+          <Parameter Name="idSeveridad" Type="int" Mode="In" />
+          <Parameter Name="idAplicacion" Type="bigint" Mode="In" />
+          <Parameter Name="server" Type="varchar" Mode="In" />
+          <Parameter Name="nomPagina" Type="varchar" Mode="In" />
+          <Parameter Name="Metodo" Type="varchar" Mode="In" />
+          <Parameter Name="Descripcion" Type="varchar" Mode="In" />
+          <Parameter Name="usrAlta" Type="varchar" Mode="In" />
+        </Function>
+        <Function Name="spRESInaPermisoEspecial" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="usrAPP" Type="varchar" Mode="In" />
+          <Parameter Name="idPagina" Type="bigint" Mode="In" />
+          <Parameter Name="idPermiso" Type="bigint" Mode="In" />
+          <Parameter Name="banActivo" Type="bit" Mode="In" />
+          <Parameter Name="usrAlta" Type="varchar" Mode="In" />
+        </Function>
+        <Function Name="spRESInaRolPaginaPermiso" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="idRol" Type="bigint" Mode="In" />
+          <Parameter Name="idPagina" Type="bigint" Mode="In" />
+          <Parameter Name="idPermiso" Type="bigint" Mode="In" />
+          <Parameter Name="banActivo" Type="bit" Mode="In" />
+          <Parameter Name="usrAlta" Type="varchar" Mode="In" />
+        </Function>
+        <Function Name="spRESInaRolUsuario" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="idRol" Type="bigint" Mode="In" />
+          <Parameter Name="usrAPP" Type="varchar" Mode="In" />
+          <Parameter Name="banActivo" Type="bit" Mode="In" />
+          <Parameter Name="usrAlta" Type="varchar" Mode="In" />
+        </Function>
+        <Function Name="spRESIncAplicacion" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="idAplicacion" Type="bigint" Mode="InOut" />
+          <Parameter Name="nomAplicacion" Type="varchar" Mode="In" />
+          <Parameter Name="banActivo" Type="bit" Mode="In" />
+          <Parameter Name="usrAlta" Type="varchar" Mode="In" />
+        </Function>
+        <Function Name="spRESIncPagina" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="idPagina" Type="bigint" Mode="InOut" />
+          <Parameter Name="idAplicacion" Type="bigint" Mode="In" />
+          <Parameter Name="nomPagina" Type="varchar" Mode="In" />
+          <Parameter Name="idPaginaPadre" Type="bigint" Mode="In" />
+          <Parameter Name="nomMenu" Type="varchar" Mode="In" />
+          <Parameter Name="url" Type="varchar" Mode="In" />
+          <Parameter Name="imgMenu" Type="varchar" Mode="In" />
+          <Parameter Name="banActivo" Type="bit" Mode="In" />
+          <Parameter Name="usrAlta" Type="varchar" Mode="In" />
+        </Function>
+        <Function Name="spRESIncPaginaPermiso" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="idPagina" Type="bigint" Mode="In" />
+          <Parameter Name="idPermiso" Type="bigint" Mode="In" />
+          <Parameter Name="banActivo" Type="bit" Mode="In" />
+          <Parameter Name="usrAlta" Type="varchar" Mode="In" />
+        </Function>
+        <Function Name="spRESIncPermiso" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="idPermiso" Type="bigint" Mode="InOut" />
+          <Parameter Name="nomPermiso" Type="varchar" Mode="In" />
+          <Parameter Name="banActivo" Type="bit" Mode="In" />
+          <Parameter Name="usrAlta" Type="varchar" Mode="In" />
+        </Function>
+        <Function Name="spRESIncRol" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="idRol" Type="bigint" Mode="InOut" />
+          <Parameter Name="nomRol" Type="varchar" Mode="In" />
+          <Parameter Name="banActivo" Type="bit" Mode="In" />
+          <Parameter Name="usrAlta" Type="varchar" Mode="In" />
+        </Function>
+        <Function Name="spRESInUsuarios" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="usrAPP" Type="varchar" Mode="In" />
+          <Parameter Name="nomNombre" Type="varchar" Mode="In" />
+          <Parameter Name="nomAPaterno" Type="varchar" Mode="In" />
+          <Parameter Name="nomAMaterno" Type="varchar" Mode="In" />
+          <Parameter Name="correo" Type="varchar" Mode="In" />
+          <Parameter Name="ProviderKey" Type="varchar" Mode="In" />
+          <Parameter Name="Provider" Type="varchar" Mode="In" />
+          <Parameter Name="id" Type="varchar" Mode="In" />
+          <Parameter Name="usrAlta" Type="varchar" Mode="In" />
+        </Function>
+        <Function Name="spRESLoginMD5" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="usrAPP" Type="varchar" Mode="In" />
+          <Parameter Name="correo" Type="varchar" Mode="In" />
+        </Function>
+        <Function Name="spRolesCn" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="spRolesEd" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="idRol" Type="bigint" Mode="In" />
+          <Parameter Name="nomRol" Type="varchar" Mode="In" />
+          <Parameter Name="pagInicio" Type="varchar" Mode="In" />
+          <Parameter Name="banActivo" Type="bit" Mode="In" />
+          <Parameter Name="usrMod" Type="varchar" Mode="In" />
+        </Function>
+        <Function Name="spRolesEl" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="idRol" Type="bigint" Mode="In" />
+          <Parameter Name="banActivo" Type="bit" Mode="In" />
+          <Parameter Name="usrMod" Type="varchar" Mode="In" />
+        </Function>
+        <Function Name="spRolesIn" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="nomRol" Type="varchar" Mode="In" />
+          <Parameter Name="pagInicio" Type="varchar" Mode="In" />
+          <Parameter Name="banActivo" Type="bit" Mode="In" />
+          <Parameter Name="usrAlta" Type="varchar" Mode="In" />
+        </Function>
+        <Function Name="spUsuarioAc" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="spUsuarioEd" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="usrAPP" Type="varchar" Mode="In" />
+          <Parameter Name="idEmpleadoJefe" Type="bigint" Mode="In" />
+          <Parameter Name="nomNombre" Type="varchar" Mode="In" />
+          <Parameter Name="nomAPaterno" Type="varchar" Mode="In" />
+          <Parameter Name="nomAMaterno" Type="varchar" Mode="In" />
+          <Parameter Name="correo" Type="varchar" Mode="In" />
+          <Parameter Name="idPuesto" Type="int" Mode="In" />
+          <Parameter Name="banActivo" Type="bit" Mode="In" />
+          <Parameter Name="usrMod" Type="varchar" Mode="In" />
+        </Function>
+        <Function Name="spUsuarioIn" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="usrAPP" Type="varchar" Mode="In" />
+          <Parameter Name="idEmpleadoJefe" Type="bigint" Mode="In" />
+          <Parameter Name="nomNombre" Type="varchar" Mode="In" />
+          <Parameter Name="nomAPaterno" Type="varchar" Mode="In" />
+          <Parameter Name="nomAMaterno" Type="varchar" Mode="In" />
+          <Parameter Name="correo" Type="varchar" Mode="In" />
+          <Parameter Name="idPuesto" Type="int" Mode="In" />
+          <Parameter Name="usrAlta" Type="varchar" Mode="In" />
+        </Function>
+        <Function Name="spUsuariosNombreCn" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="idAplicacion" Type="bigint" Mode="In" />
+          <Parameter Name="Nombre" Type="varchar" Mode="In" />
+        </Function>
+        <EntityContainer Name="CMX360SeguridadModelStoreContainer" />
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="CMX360SeguridadModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityContainer Name="CMX360SeguridadEntities" annotation:LazyLoadingEnabled="true" >
+          <FunctionImport Name="spCategoriaImagenCn" ReturnType="Collection(CMX360SeguridadModel.spCategoriaImagenCn_Result)" />
+          <FunctionImport Name="spFPSAplicacionCn" ReturnType="Collection(CMX360SeguridadModel.spFPSAplicacionCn_Result)" />
+          <FunctionImport Name="spFPSaUsuarioAlmacenDel">
+            <Parameter Name="usrAPP" Mode="In" Type="String" />
+            <Parameter Name="IdAlmacen" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="spFPSaUsuarioAlmacenIn">
+            <Parameter Name="usrAPP" Mode="In" Type="String" />
+            <Parameter Name="IdAlmacen" Mode="In" Type="Int32" />
+            <Parameter Name="BanActivo" Mode="In" Type="Boolean" />
+            <Parameter Name="UsrAlta" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="spImagenMenuCn" ReturnType="Collection(CMX360SeguridadModel.spImagenMenuCn_Result)">
+            <Parameter Name="idCategoria" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="spIVSUsuariosIn">
+            <Parameter Name="usrAPP" Mode="In" Type="String" />
+            <Parameter Name="nomNombre" Mode="In" Type="String" />
+            <Parameter Name="nomAPaterno" Mode="In" Type="String" />
+            <Parameter Name="nomAMaterno" Mode="In" Type="String" />
+            <Parameter Name="correo" Mode="In" Type="String" />
+            <Parameter Name="ProviderKey" Mode="In" Type="String" />
+            <Parameter Name="Provider" Mode="In" Type="String" />
+            <Parameter Name="usrAlta" Mode="In" Type="String" />
+            <Parameter Name="Id" Mode="In" Type="String" />
+            <Parameter Name="contraseña" Mode="In" Type="String" />
+            <Parameter Name="LlaveActicacion" Mode="In" Type="String" />
+            <Parameter Name="FechaCadudaLlave" Mode="In" Type="DateTime" />
+            <Parameter Name="FechaCorreoValidado" Mode="In" Type="DateTime" />
+            <Parameter Name="CorreoValidado" Mode="In" Type="Boolean" />
+          </FunctionImport>
+          <FunctionImport Name="spIVXLoginLocal" ReturnType="Collection(CMX360SeguridadModel.spIVXLoginLocal_Result)">
+            <Parameter Name="usuario" Mode="In" Type="String" />
+            <Parameter Name="PASSWORD" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="spIVXUsuariosCn" ReturnType="Collection(CMX360SeguridadModel.spIVXUsuariosCn_Result)">
+            <Parameter Name="usuario" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="spPaginaPermisoRolCn" ReturnType="Collection(CMX360SeguridadModel.spPaginaPermisoRolCn_Result)">
+            <Parameter Name="idPagina" Mode="In" Type="Int64" />
+          </FunctionImport>
+          <FunctionImport Name="spPaginaPermisoRolEl">
+            <Parameter Name="idRol" Mode="In" Type="Int64" />
+            <Parameter Name="idPagina" Mode="In" Type="Int64" />
+            <Parameter Name="idPermiso" Mode="In" Type="Int64" />
+          </FunctionImport>
+          <FunctionImport Name="spPaginasRolCn" ReturnType="Collection(CMX360SeguridadModel.spPaginasRolCn_Result)">
+            <Parameter Name="idRol" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="spRESCambioContrasenia">
+            <Parameter Name="correo" Mode="In" Type="String" />
+            <Parameter Name="usrAPP" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="spRESCnaPermisoEspecial" ReturnType="Collection(CMX360SeguridadModel.spRESCnaPermisoEspecial_Result)">
+            <Parameter Name="usrAPP" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="spRESCnaRolPaginaPermiso" ReturnType="Collection(CMX360SeguridadModel.spRESCnaRolPaginaPermiso_Result)">
+            <Parameter Name="idRol" Mode="In" Type="Int64" />
+            <Parameter Name="idPagina" Mode="In" Type="Int64" />
+          </FunctionImport>
+          <FunctionImport Name="spRESCnaRolUsuario" ReturnType="Collection(CMX360SeguridadModel.spRESCnaRolUsuario_Result)">
+            <Parameter Name="usrAPP" Mode="In" Type="String" />
+            <Parameter Name="idAplicacion" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="spRESCncAplicacion" ReturnType="Collection(CMX360SeguridadModel.spRESCncAplicacion_Result)">
+            <Parameter Name="idAplicacion" Mode="In" Type="Int64" />
+          </FunctionImport>
+          <FunctionImport Name="spRESCncPagina" ReturnType="Collection(CMX360SeguridadModel.spRESCncPagina_Result)">
+            <Parameter Name="idPagina" Mode="In" Type="Int64" />
+            <Parameter Name="nomPagina" Mode="In" Type="String" />
+            <Parameter Name="idAplicacion" Mode="In" Type="Int64" />
+          </FunctionImport>
+          <FunctionImport Name="spRESCncPaginaPermiso" ReturnType="Collection(CMX360SeguridadModel.spRESCncPaginaPermiso_Result)">
+            <Parameter Name="idPagina" Mode="In" Type="Int64" />
+          </FunctionImport>
+          <FunctionImport Name="spRESCncPermiso" ReturnType="Collection(CMX360SeguridadModel.spRESCncPermiso_Result)">
+            <Parameter Name="idPermiso" Mode="In" Type="Int64" />
+          </FunctionImport>
+          <FunctionImport Name="spRESCncRol" ReturnType="Collection(CMX360SeguridadModel.spRESCncRol_Result)">
+            <Parameter Name="idRol" Mode="In" Type="Int64" />
+          </FunctionImport>
+          <FunctionImport Name="spRESCtaAplicacionRol" ReturnType="Collection(CMX360SeguridadModel.spRESCtaAplicacionRol_Result)">
+            <Parameter Name="idAplicacion" Mode="In" Type="Int64" />
+          </FunctionImport>
+          <FunctionImport Name="spRESCtaBackProcess">
+            <Parameter Name="idAplicacion" Mode="In" Type="Int32" />
+            <Parameter Name="banActivo" Mode="In" Type="Boolean" />
+          </FunctionImport>
+          <FunctionImport Name="spRESCtaBackProcessLog">
+            <Parameter Name="idBackProcess" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="spRESCtaBackProcessLogUltimaEjecucion">
+            <Parameter Name="idBackProcess" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="spRESCtaLogError" ReturnType="Collection(CMX360SeguridadModel.spRESCtaLogError_Result)">
+            <Parameter Name="idAplicacion" Mode="In" Type="Boolean" />
+          </FunctionImport>
+          <FunctionImport Name="spRESCtaPermisoEspecial" ReturnType="Collection(CMX360SeguridadModel.spRESCtaPermisoEspecial_Result)">
+            <Parameter Name="banActivo" Mode="In" Type="Boolean" />
+          </FunctionImport>
+          <FunctionImport Name="spRESCtcAplicacion" ReturnType="Collection(CMX360SeguridadModel.spRESCtcAplicacion_Result)">
+            <Parameter Name="banActivo" Mode="In" Type="Boolean" />
+          </FunctionImport>
+          <FunctionImport Name="spRESCtcPagina" ReturnType="Collection(CMX360SeguridadModel.spRESCtcPagina_Result)">
+            <Parameter Name="idAplicacion" Mode="In" Type="Int64" />
+            <Parameter Name="banActivo" Mode="In" Type="Boolean" />
+          </FunctionImport>
+          <FunctionImport Name="spRESCtcPaginaPermiso" ReturnType="Collection(CMX360SeguridadModel.spRESCtcPaginaPermiso_Result)">
+            <Parameter Name="banActivo" Mode="In" Type="Boolean" />
+          </FunctionImport>
+          <FunctionImport Name="spRESCtcPermiso" ReturnType="Collection(CMX360SeguridadModel.spRESCtcPermiso_Result)">
+            <Parameter Name="banActivo" Mode="In" Type="Boolean" />
+          </FunctionImport>
+          <FunctionImport Name="spRESCtcRol" ReturnType="Collection(CMX360SeguridadModel.spRESCtcRol_Result)">
+            <Parameter Name="banActivo" Mode="In" Type="Boolean" />
+          </FunctionImport>
+          <FunctionImport Name="spRESCtUsuarios" ReturnType="Collection(CMX360SeguridadModel.spRESCtUsuarios_Result)">
+            <Parameter Name="idAplicacion" Mode="In" Type="Int64" />
+            <Parameter Name="banActivo" Mode="In" Type="Boolean" />
+          </FunctionImport>
+          <FunctionImport Name="spRESDeaEstautsBackProcess">
+            <Parameter Name="idBackProcess" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="spRESDelaRolUsuario">
+            <Parameter Name="idRol" Mode="In" Type="Int64" />
+            <Parameter Name="usrAPP" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="spRESEdaBackProcess">
+            <Parameter Name="idBackProcess" Mode="In" Type="Int32" />
+            <Parameter Name="idAplicacion" Mode="In" Type="Int64" />
+            <Parameter Name="nomProceso" Mode="In" Type="String" />
+            <Parameter Name="xmlParamteros" Mode="In" Type="String" />
+            <Parameter Name="nomLibreria" Mode="In" Type="String" />
+            <Parameter Name="banActivo" Mode="In" Type="Boolean" />
+          </FunctionImport>
+          <FunctionImport Name="spRESEdaEstautsBackProcess">
+            <Parameter Name="idBackProcess" Mode="In" Type="Int32" />
+            <Parameter Name="banProceso" Mode="In" Type="Int64" />
+          </FunctionImport>
+          <FunctionImport Name="spRESEdaPermisoEspecial">
+            <Parameter Name="usrAPP" Mode="In" Type="String" />
+            <Parameter Name="idPagina" Mode="In" Type="Int64" />
+            <Parameter Name="idPermiso" Mode="In" Type="Int64" />
+            <Parameter Name="banActivo" Mode="In" Type="Boolean" />
+            <Parameter Name="usrMod" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="spRESEdaRolPaginaPermiso">
+            <Parameter Name="idRol" Mode="In" Type="Int64" />
+            <Parameter Name="idPagina" Mode="In" Type="Int64" />
+            <Parameter Name="idPermiso" Mode="In" Type="Int64" />
+            <Parameter Name="banActivo" Mode="In" Type="Boolean" />
+            <Parameter Name="usrMod" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="spRESEdcAplicacion">
+            <Parameter Name="idAplicacion" Mode="In" Type="Int64" />
+            <Parameter Name="nomAplicacion" Mode="In" Type="String" />
+            <Parameter Name="xmlParametros" Mode="In" Type="String" />
+            <Parameter Name="banActivo" Mode="In" Type="Boolean" />
+            <Parameter Name="usrMod" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="spRESEdcPagina">
+            <Parameter Name="idPagina" Mode="In" Type="Int64" />
+            <Parameter Name="idAplicacion" Mode="In" Type="Int64" />
+            <Parameter Name="nomPagina" Mode="In" Type="String" />
+            <Parameter Name="idPaginaPadre" Mode="In" Type="Int64" />
+            <Parameter Name="nomMenu" Mode="In" Type="String" />
+            <Parameter Name="url" Mode="In" Type="String" />
+            <Parameter Name="imgMenu" Mode="In" Type="String" />
+            <Parameter Name="banActivo" Mode="In" Type="Boolean" />
+            <Parameter Name="usrMod" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="spRESEdcPaginaPermiso">
+            <Parameter Name="idPagina" Mode="In" Type="Int64" />
+            <Parameter Name="idPermiso" Mode="In" Type="Int64" />
+            <Parameter Name="banActivo" Mode="In" Type="Boolean" />
+            <Parameter Name="usrMod" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="spRESEdcPermiso">
+            <Parameter Name="idPermiso" Mode="In" Type="Int64" />
+            <Parameter Name="nomPermiso" Mode="In" Type="String" />
+            <Parameter Name="banActivo" Mode="In" Type="Boolean" />
+            <Parameter Name="usrMod" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="spRESEdcRol">
+            <Parameter Name="idRol" Mode="In" Type="Int64" />
+            <Parameter Name="nomRol" Mode="In" Type="String" />
+            <Parameter Name="banActivo" Mode="In" Type="Boolean" />
+            <Parameter Name="usrMod" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="spRESEdUsuarios">
+            <Parameter Name="usrAPP" Mode="In" Type="String" />
+            <Parameter Name="nomNombre" Mode="In" Type="String" />
+            <Parameter Name="nomAPaterno" Mode="In" Type="String" />
+            <Parameter Name="nomAMaterno" Mode="In" Type="String" />
+            <Parameter Name="banActivo" Mode="In" Type="Boolean" />
+            <Parameter Name="usrMod" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="spRESICnPaginasXUsuario" ReturnType="Collection(CMX360SeguridadModel.spRESICnPaginasXUsuario_Result)">
+            <Parameter Name="usrAPP" Mode="In" Type="String" />
+            <Parameter Name="idAplicacion" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="spRESICnPermisosPaginaXUsuario" ReturnType="Collection(Int64)">
+            <Parameter Name="nomPagina" Mode="In" Type="String" />
+            <Parameter Name="usrAPP" Mode="In" Type="String" />
+            <Parameter Name="idAplicacion" Mode="In" Type="Int64" />
+          </FunctionImport>
+          <FunctionImport Name="spRESInaAplicacionRol">
+            <Parameter Name="idAplicacion" Mode="In" Type="Int64" />
+            <Parameter Name="idRol" Mode="In" Type="Int64" />
+          </FunctionImport>
+          <FunctionImport Name="spRESInaBackProcess">
+            <Parameter Name="idBackProcess" Mode="InOut" Type="Int32" />
+            <Parameter Name="idAplicacion" Mode="In" Type="Int64" />
+            <Parameter Name="nomProceso" Mode="In" Type="String" />
+            <Parameter Name="xmlParamteros" Mode="In" Type="String" />
+            <Parameter Name="nomLibreria" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="spRESInaBackProcessLog">
+            <Parameter Name="idaBackProcessLog" Mode="InOut" Type="Int64" />
+            <Parameter Name="idBackProcess" Mode="In" Type="Int32" />
+            <Parameter Name="Resultado" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="spRESInaLogError">
+            <Parameter Name="idLogError" Mode="InOut" Type="Int64" />
+            <Parameter Name="idCapa" Mode="In" Type="Int32" />
+            <Parameter Name="idSeveridad" Mode="In" Type="Int32" />
+            <Parameter Name="idAplicacion" Mode="In" Type="Int64" />
+            <Parameter Name="server" Mode="In" Type="String" />
+            <Parameter Name="nomPagina" Mode="In" Type="String" />
+            <Parameter Name="Metodo" Mode="In" Type="String" />
+            <Parameter Name="Descripcion" Mode="In" Type="String" />
+            <Parameter Name="usrAlta" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="spRESInaPermisoEspecial">
+            <Parameter Name="usrAPP" Mode="In" Type="String" />
+            <Parameter Name="idPagina" Mode="In" Type="Int64" />
+            <Parameter Name="idPermiso" Mode="In" Type="Int64" />
+            <Parameter Name="banActivo" Mode="In" Type="Boolean" />
+            <Parameter Name="usrAlta" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="spRESInaRolPaginaPermiso">
+            <Parameter Name="idRol" Mode="In" Type="Int64" />
+            <Parameter Name="idPagina" Mode="In" Type="Int64" />
+            <Parameter Name="idPermiso" Mode="In" Type="Int64" />
+            <Parameter Name="banActivo" Mode="In" Type="Boolean" />
+            <Parameter Name="usrAlta" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="spRESInaRolUsuario">
+            <Parameter Name="idRol" Mode="In" Type="Int64" />
+            <Parameter Name="usrAPP" Mode="In" Type="String" />
+            <Parameter Name="banActivo" Mode="In" Type="Boolean" />
+            <Parameter Name="usrAlta" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="spRESIncAplicacion">
+            <Parameter Name="idAplicacion" Mode="InOut" Type="Int64" />
+            <Parameter Name="nomAplicacion" Mode="In" Type="String" />
+            <Parameter Name="banActivo" Mode="In" Type="Boolean" />
+            <Parameter Name="usrAlta" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="spRESIncPagina">
+            <Parameter Name="idPagina" Mode="InOut" Type="Int64" />
+            <Parameter Name="idAplicacion" Mode="In" Type="Int64" />
+            <Parameter Name="nomPagina" Mode="In" Type="String" />
+            <Parameter Name="idPaginaPadre" Mode="In" Type="Int64" />
+            <Parameter Name="nomMenu" Mode="In" Type="String" />
+            <Parameter Name="url" Mode="In" Type="String" />
+            <Parameter Name="imgMenu" Mode="In" Type="String" />
+            <Parameter Name="banActivo" Mode="In" Type="Boolean" />
+            <Parameter Name="usrAlta" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="spRESIncPaginaPermiso">
+            <Parameter Name="idPagina" Mode="In" Type="Int64" />
+            <Parameter Name="idPermiso" Mode="In" Type="Int64" />
+            <Parameter Name="banActivo" Mode="In" Type="Boolean" />
+            <Parameter Name="usrAlta" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="spRESIncPermiso">
+            <Parameter Name="idPermiso" Mode="InOut" Type="Int64" />
+            <Parameter Name="nomPermiso" Mode="In" Type="String" />
+            <Parameter Name="banActivo" Mode="In" Type="Boolean" />
+            <Parameter Name="usrAlta" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="spRESIncRol">
+            <Parameter Name="idRol" Mode="InOut" Type="Int64" />
+            <Parameter Name="nomRol" Mode="In" Type="String" />
+            <Parameter Name="banActivo" Mode="In" Type="Boolean" />
+            <Parameter Name="usrAlta" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="spRESInUsuarios">
+            <Parameter Name="usrAPP" Mode="In" Type="String" />
+            <Parameter Name="nomNombre" Mode="In" Type="String" />
+            <Parameter Name="nomAPaterno" Mode="In" Type="String" />
+            <Parameter Name="nomAMaterno" Mode="In" Type="String" />
+            <Parameter Name="correo" Mode="In" Type="String" />
+            <Parameter Name="ProviderKey" Mode="In" Type="String" />
+            <Parameter Name="Provider" Mode="In" Type="String" />
+            <Parameter Name="id" Mode="In" Type="String" />
+            <Parameter Name="usrAlta" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="spRESLoginMD5" ReturnType="Collection(Int32)">
+            <Parameter Name="usrAPP" Mode="In" Type="String" />
+            <Parameter Name="correo" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="spRolesCn" ReturnType="Collection(CMX360SeguridadModel.spRolesCn_Result)" />
+          <FunctionImport Name="spRolesEd">
+            <Parameter Name="idRol" Mode="In" Type="Int64" />
+            <Parameter Name="nomRol" Mode="In" Type="String" />
+            <Parameter Name="pagInicio" Mode="In" Type="String" />
+            <Parameter Name="banActivo" Mode="In" Type="Boolean" />
+            <Parameter Name="usrMod" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="spRolesEl">
+            <Parameter Name="idRol" Mode="In" Type="Int64" />
+            <Parameter Name="banActivo" Mode="In" Type="Boolean" />
+            <Parameter Name="usrMod" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="spRolesIn">
+            <Parameter Name="nomRol" Mode="In" Type="String" />
+            <Parameter Name="pagInicio" Mode="In" Type="String" />
+            <Parameter Name="banActivo" Mode="In" Type="Boolean" />
+            <Parameter Name="usrAlta" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="spUsuarioAc" />
+          <FunctionImport Name="spUsuarioEd">
+            <Parameter Name="usrAPP" Mode="In" Type="String" />
+            <Parameter Name="idEmpleadoJefe" Mode="In" Type="Int64" />
+            <Parameter Name="nomNombre" Mode="In" Type="String" />
+            <Parameter Name="nomAPaterno" Mode="In" Type="String" />
+            <Parameter Name="nomAMaterno" Mode="In" Type="String" />
+            <Parameter Name="correo" Mode="In" Type="String" />
+            <Parameter Name="idPuesto" Mode="In" Type="Int32" />
+            <Parameter Name="banActivo" Mode="In" Type="Boolean" />
+            <Parameter Name="usrMod" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="spUsuarioIn">
+            <Parameter Name="usrAPP" Mode="In" Type="String" />
+            <Parameter Name="idEmpleadoJefe" Mode="In" Type="Int64" />
+            <Parameter Name="nomNombre" Mode="In" Type="String" />
+            <Parameter Name="nomAPaterno" Mode="In" Type="String" />
+            <Parameter Name="nomAMaterno" Mode="In" Type="String" />
+            <Parameter Name="correo" Mode="In" Type="String" />
+            <Parameter Name="idPuesto" Mode="In" Type="Int32" />
+            <Parameter Name="usrAlta" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="spUsuariosNombreCn" ReturnType="Collection(CMX360SeguridadModel.spUsuariosNombreCn_Result)">
+            <Parameter Name="idAplicacion" Mode="In" Type="Int64" />
+            <Parameter Name="Nombre" Mode="In" Type="String" />
+          </FunctionImport>
+        </EntityContainer>
+        <ComplexType Name="spCategoriaImagenCn_Result">
+          <Property Type="Int32" Name="idCategoria" Nullable="false" />
+          <Property Type="String" Name="descripcion" Nullable="true" MaxLength="35" />
+          <Property Type="Boolean" Name="banActivo" Nullable="true" />
+        </ComplexType>
+        <ComplexType Name="spFPSAplicacionCn_Result">
+          <Property Type="Int64" Name="idAplicacion" Nullable="false" />
+          <Property Type="String" Name="nomAplicacion" Nullable="true" MaxLength="20" />
+          <Property Type="Boolean" Name="banActivo" Nullable="true" />
+        </ComplexType>
+        <ComplexType Name="spImagenMenuCn_Result">
+          <Property Type="Int32" Name="idImagenMenu" Nullable="false" />
+          <Property Type="String" Name="codigoCss" Nullable="true" MaxLength="40" />
+          <Property Type="Int32" Name="idCategoria" Nullable="false" />
+          <Property Type="Boolean" Name="banActivo" Nullable="true" />
+        </ComplexType>
+        <ComplexType Name="spIVXLoginLocal_Result">
+          <Property Type="String" Name="usrAPP" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="nomNombre" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="nomAPaterno" Nullable="true" MaxLength="20" />
+          <Property Type="String" Name="nomAMaterno" Nullable="false" MaxLength="20" />
+          <Property Type="String" Name="correo" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="ProviderKey" Nullable="true" MaxLength="150" />
+          <Property Type="String" Name="Provider" Nullable="true" MaxLength="150" />
+          <Property Type="Boolean" Name="banActivo" Nullable="true" />
+          <Property Type="String" Name="Id" Nullable="true" MaxLength="150" />
+          <Property Type="String" Name="contraseña" Nullable="true" MaxLength="50" />
+        </ComplexType>
+        <ComplexType Name="spIVXUsuariosCn_Result">
+          <Property Type="String" Name="usrAPP" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="nomNombre" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="nomAPaterno" Nullable="true" MaxLength="20" />
+          <Property Type="String" Name="nomAMaterno" Nullable="false" MaxLength="20" />
+          <Property Type="String" Name="correo" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="ProviderKey" Nullable="true" MaxLength="150" />
+          <Property Type="String" Name="Provider" Nullable="true" MaxLength="150" />
+          <Property Type="Boolean" Name="banActivo" Nullable="true" />
+          <Property Type="String" Name="Id" Nullable="true" MaxLength="150" />
+          <Property Type="String" Name="contraseña" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="LlaveActicacion" Nullable="true" MaxLength="50" />
+          <Property Type="DateTime" Name="FechaCadudaLlave" Nullable="true" Precision="23" />
+          <Property Type="DateTime" Name="FechaCorreoValidado" Nullable="true" Precision="23" />
+          <Property Type="Boolean" Name="CorreoValidado" Nullable="true" />
+        </ComplexType>
+        <ComplexType Name="spPaginaPermisoRolCn_Result">
+          <Property Type="Int64" Name="idPagina" Nullable="false" />
+          <Property Type="Int64" Name="idPermiso" Nullable="false" />
+          <Property Type="String" Name="nomPermiso" Nullable="true" MaxLength="50" />
+          <Property Type="Int64" Name="idRol" Nullable="false" />
+          <Property Type="String" Name="nomRol" Nullable="true" MaxLength="20" />
+          <Property Type="Boolean" Name="banActivo" Nullable="true" />
+          <Property Type="String" Name="usrAlta" Nullable="false" MaxLength="20" />
+          <Property Type="DateTime" Name="fecAlta" Nullable="false" Precision="23" />
+          <Property Type="String" Name="usrMod" Nullable="true" MaxLength="20" />
+          <Property Type="String" Name="fecMod" Nullable="true" MaxLength="10" />
+        </ComplexType>
+        <ComplexType Name="spPaginasRolCn_Result">
+          <Property Type="Int64" Name="idPagina" Nullable="false" />
+          <Property Type="Int64" Name="idPaginaPadre" Nullable="false" />
+          <Property Type="String" Name="nomPagina" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="nomMenu" Nullable="true" MaxLength="100" />
+          <Property Type="String" Name="url" Nullable="false" MaxLength="100" />
+          <Property Type="String" Name="imgMenu" Nullable="true" MaxLength="50" />
+        </ComplexType>
+        <ComplexType Name="spRESCnaPermisoEspecial_Result">
+          <Property Type="String" Name="usrAPP" Nullable="false" MaxLength="50" />
+          <Property Type="Int64" Name="idPagina" Nullable="true" />
+          <Property Type="Int64" Name="idPermiso" Nullable="true" />
+          <Property Type="Boolean" Name="banActivo" Nullable="true" />
+          <Property Type="String" Name="usrAlta" Nullable="false" MaxLength="20" />
+          <Property Type="DateTime" Name="fecAlta" Nullable="false" Precision="23" />
+          <Property Type="String" Name="usrMod" Nullable="false" MaxLength="20" />
+          <Property Type="String" Name="fecMod" Nullable="false" MaxLength="10" />
+        </ComplexType>
+        <ComplexType Name="spRESCnaRolPaginaPermiso_Result">
+          <Property Type="Int64" Name="idRol" Nullable="false" />
+          <Property Type="Int64" Name="idPagina" Nullable="false" />
+          <Property Type="Int64" Name="idPermiso" Nullable="false" />
+          <Property Type="Boolean" Name="banActivo" Nullable="true" />
+        </ComplexType>
+        <ComplexType Name="spRESCnaRolUsuario_Result">
+          <Property Type="Int64" Name="idRol" Nullable="false" />
+          <Property Type="String" Name="nomRol" Nullable="true" MaxLength="20" />
+          <Property Type="String" Name="nomNombre" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="nomAPaterno" Nullable="true" MaxLength="20" />
+          <Property Type="String" Name="nomAMaterno" Nullable="false" MaxLength="20" />
+          <Property Type="String" Name="pagInicio" Nullable="true" MaxLength="50" />
+        </ComplexType>
+        <ComplexType Name="spRESCncAplicacion_Result">
+          <Property Type="Int64" Name="idAplicacion" Nullable="false" />
+          <Property Type="String" Name="nomAplicacion" Nullable="true" MaxLength="20" />
+          <Property Type="String" Name="xmlParametros" Nullable="false" MaxLength="Max" />
+        </ComplexType>
+        <ComplexType Name="spRESCncPagina_Result">
+          <Property Type="Int64" Name="idPagina" Nullable="false" />
+          <Property Type="String" Name="nomPagina" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="nomMenu" Nullable="true" MaxLength="100" />
+          <Property Type="String" Name="url" Nullable="false" MaxLength="100" />
+          <Property Type="Boolean" Name="banActivo" Nullable="true" />
+          <Property Type="Int64" Name="idPaginaPadre" Nullable="false" />
+          <Property Type="String" Name="imgMenu" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="nomMenuPadre" Nullable="true" MaxLength="100" />
+          <Property Type="DateTime" Name="fecAlta" Nullable="false" Precision="23" />
+          <Property Type="String" Name="usrAlta" Nullable="false" MaxLength="20" />
+        </ComplexType>
+        <ComplexType Name="spRESCncPaginaPermiso_Result">
+          <Property Type="Int64" Name="idPagina" Nullable="false" />
+          <Property Type="Int64" Name="idPermiso" Nullable="false" />
+          <Property Type="Boolean" Name="banActivo" Nullable="true" />
+          <Property Type="String" Name="usrAlta" Nullable="false" MaxLength="20" />
+          <Property Type="DateTime" Name="fecAlta" Nullable="false" Precision="23" />
+          <Property Type="String" Name="usrMod" Nullable="true" MaxLength="20" />
+          <Property Type="String" Name="fecMod" Nullable="true" MaxLength="10" />
+        </ComplexType>
+        <ComplexType Name="spRESCncPermiso_Result">
+          <Property Type="Int64" Name="idPermiso" Nullable="false" />
+          <Property Type="String" Name="nomPermiso" Nullable="true" MaxLength="50" />
+          <Property Type="Boolean" Name="banActivo" Nullable="true" />
+          <Property Type="String" Name="usrAlta" Nullable="false" MaxLength="20" />
+          <Property Type="DateTime" Name="fecAlta" Nullable="false" Precision="23" />
+          <Property Type="String" Name="usrMod" Nullable="true" MaxLength="20" />
+          <Property Type="String" Name="fecMod" Nullable="true" MaxLength="10" />
+        </ComplexType>
+        <ComplexType Name="spRESCncRol_Result">
+          <Property Type="Int64" Name="idRol" Nullable="false" />
+          <Property Type="String" Name="nomRol" Nullable="true" MaxLength="20" />
+          <Property Type="Boolean" Name="banActivo" Nullable="true" />
+          <Property Type="String" Name="usrAlta" Nullable="false" MaxLength="20" />
+          <Property Type="DateTime" Name="fecAlta" Nullable="false" Precision="23" />
+          <Property Type="String" Name="usrMod" Nullable="true" MaxLength="20" />
+          <Property Type="String" Name="fecMod" Nullable="true" MaxLength="10" />
+        </ComplexType>
+        <ComplexType Name="spRESCtaAplicacionRol_Result">
+          <Property Type="Int64" Name="idAplicacion" Nullable="false" />
+          <Property Type="Int64" Name="idRol" Nullable="false" />
+          <Property Type="String" Name="nomRol" Nullable="true" MaxLength="20" />
+        </ComplexType>
+        <ComplexType Name="spRESCtaLogError_Result">
+          <Property Type="Int64" Name="idLogError" Nullable="false" />
+          <Property Type="Int32" Name="idCapa" Nullable="true" />
+          <Property Type="Int32" Name="idSeveridad" Nullable="true" />
+          <Property Type="Int64" Name="idAplicacion" Nullable="true" />
+          <Property Type="String" Name="server" Nullable="false" MaxLength="15" />
+          <Property Type="String" Name="nomPagina" Nullable="false" MaxLength="100" />
+          <Property Type="String" Name="Metodo" Nullable="false" MaxLength="100" />
+          <Property Type="String" Name="Descripcion" Nullable="false" />
+        </ComplexType>
+        <ComplexType Name="spRESCtaPermisoEspecial_Result">
+          <Property Type="String" Name="usrAPP" Nullable="false" MaxLength="50" />
+          <Property Type="Int64" Name="idPagina" Nullable="true" />
+          <Property Type="Int64" Name="idPermiso" Nullable="true" />
+          <Property Type="Boolean" Name="banActivo" Nullable="true" />
+          <Property Type="String" Name="usrAlta" Nullable="false" MaxLength="20" />
+          <Property Type="DateTime" Name="fecAlta" Nullable="false" Precision="23" />
+          <Property Type="String" Name="usrMod" Nullable="false" MaxLength="20" />
+          <Property Type="String" Name="fecMod" Nullable="false" MaxLength="10" />
+        </ComplexType>
+        <ComplexType Name="spRESCtcAplicacion_Result">
+          <Property Type="Int64" Name="idAplicacion" Nullable="false" />
+          <Property Type="String" Name="nomAplicacion" Nullable="true" MaxLength="20" />
+        </ComplexType>
+        <ComplexType Name="spRESCtcPagina_Result">
+          <Property Type="Int64" Name="idPagina" Nullable="false" />
+          <Property Type="String" Name="nomPagina" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="nomMenu" Nullable="true" MaxLength="100" />
+          <Property Type="String" Name="url" Nullable="false" MaxLength="100" />
+          <Property Type="Boolean" Name="banActivo" Nullable="true" />
+          <Property Type="String" Name="usrAlta" Nullable="false" MaxLength="20" />
+          <Property Type="DateTime" Name="fecAlta" Nullable="false" Precision="23" />
+          <Property Type="String" Name="usrMod" Nullable="true" MaxLength="20" />
+          <Property Type="String" Name="fecMod" Nullable="true" MaxLength="10" />
+          <Property Type="Int64" Name="idPaginaPadre" Nullable="false" />
+        </ComplexType>
+        <ComplexType Name="spRESCtcPaginaPermiso_Result">
+          <Property Type="Int64" Name="idPagina" Nullable="false" />
+          <Property Type="Int64" Name="idPermiso" Nullable="false" />
+          <Property Type="Boolean" Name="banActivo" Nullable="true" />
+          <Property Type="String" Name="usrAlta" Nullable="false" MaxLength="20" />
+          <Property Type="DateTime" Name="fecAlta" Nullable="false" Precision="23" />
+          <Property Type="String" Name="usrMod" Nullable="true" MaxLength="20" />
+          <Property Type="String" Name="fecMod" Nullable="true" MaxLength="10" />
+        </ComplexType>
+        <ComplexType Name="spRESCtcPermiso_Result">
+          <Property Type="Int64" Name="idPermiso" Nullable="false" />
+          <Property Type="String" Name="nomPermiso" Nullable="true" MaxLength="50" />
+          <Property Type="Boolean" Name="banActivo" Nullable="true" />
+          <Property Type="String" Name="usrAlta" Nullable="false" MaxLength="20" />
+          <Property Type="DateTime" Name="fecAlta" Nullable="false" Precision="23" />
+          <Property Type="String" Name="usrMod" Nullable="true" MaxLength="20" />
+          <Property Type="String" Name="fecMod" Nullable="true" MaxLength="10" />
+        </ComplexType>
+        <ComplexType Name="spRESCtcRol_Result">
+          <Property Type="Int64" Name="idRol" Nullable="false" />
+          <Property Type="String" Name="nomRol" Nullable="true" MaxLength="20" />
+          <Property Type="Boolean" Name="banActivo" Nullable="true" />
+          <Property Type="String" Name="usrAlta" Nullable="false" MaxLength="20" />
+          <Property Type="DateTime" Name="fecAlta" Nullable="false" Precision="23" />
+          <Property Type="String" Name="usrMod" Nullable="true" MaxLength="20" />
+          <Property Type="String" Name="fecMod" Nullable="true" MaxLength="10" />
+        </ComplexType>
+        <ComplexType Name="spRESCtUsuarios_Result">
+          <Property Type="String" Name="usrAPP" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="nomNombre" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="nomAPaterno" Nullable="true" MaxLength="20" />
+          <Property Type="String" Name="nomAMaterno" Nullable="false" MaxLength="20" />
+          <Property Type="Boolean" Name="banActivo" Nullable="true" />
+          <Property Type="Int64" Name="idRol" Nullable="false" />
+          <Property Type="String" Name="nomRol" Nullable="false" MaxLength="20" />
+          <Property Type="Int64" Name="idAplicacion" Nullable="true" />
+        </ComplexType>
+        <ComplexType Name="spRESICnPaginasXUsuario_Result">
+          <Property Type="Int64" Name="idPagina" Nullable="false" />
+          <Property Type="Int64" Name="idPaginaPadre" Nullable="false" />
+          <Property Type="String" Name="nomMenu" Nullable="true" MaxLength="100" />
+          <Property Type="String" Name="imgMenu" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="url" Nullable="false" MaxLength="100" />
+        </ComplexType>
+        <ComplexType Name="spRolesCn_Result">
+          <Property Type="Int64" Name="idRol" Nullable="false" />
+          <Property Type="String" Name="nomRol" Nullable="true" MaxLength="20" />
+          <Property Type="String" Name="pagInicio" Nullable="true" MaxLength="50" />
+          <Property Type="Boolean" Name="banActivo" Nullable="true" />
+        </ComplexType>
+        <ComplexType Name="spUsuariosNombreCn_Result">
+          <Property Type="String" Name="NumEmpleado" Nullable="true" MaxLength="10" />
+          <Property Type="String" Name="usrAPP" Nullable="true" MaxLength="20" />
+          <Property Type="String" Name="nomNombre" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="nomAPaterno" Nullable="true" MaxLength="20" />
+          <Property Type="String" Name="nomAMaterno" Nullable="false" MaxLength="20" />
+          <Property Type="Boolean" Name="banActivo" Nullable="true" />
+          <Property Type="Int64" Name="idRol" Nullable="false" />
+          <Property Type="String" Name="nomRol" Nullable="false" MaxLength="20" />
+          <Property Type="Int64" Name="idAplicacion" Nullable="true" />
+        </ComplexType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="CMX360SeguridadModelStoreContainer" CdmEntityContainer="CMX360SeguridadEntities" >
+          <FunctionImportMapping FunctionImportName="spCategoriaImagenCn" FunctionName="CMX360SeguridadModel.Store.spCategoriaImagenCn">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="CMX360SeguridadModel.spCategoriaImagenCn_Result">
+                <ScalarProperty Name="idCategoria" ColumnName="idCategoria" />
+                <ScalarProperty Name="descripcion" ColumnName="descripcion" />
+                <ScalarProperty Name="banActivo" ColumnName="banActivo" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="spFPSAplicacionCn" FunctionName="CMX360SeguridadModel.Store.spFPSAplicacionCn">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="CMX360SeguridadModel.spFPSAplicacionCn_Result">
+                <ScalarProperty Name="idAplicacion" ColumnName="idAplicacion" />
+                <ScalarProperty Name="nomAplicacion" ColumnName="nomAplicacion" />
+                <ScalarProperty Name="banActivo" ColumnName="banActivo" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="spFPSaUsuarioAlmacenDel" FunctionName="CMX360SeguridadModel.Store.spFPSaUsuarioAlmacenDel" />
+          <FunctionImportMapping FunctionImportName="spFPSaUsuarioAlmacenIn" FunctionName="CMX360SeguridadModel.Store.spFPSaUsuarioAlmacenIn" />
+          <FunctionImportMapping FunctionImportName="spImagenMenuCn" FunctionName="CMX360SeguridadModel.Store.spImagenMenuCn">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="CMX360SeguridadModel.spImagenMenuCn_Result">
+                <ScalarProperty Name="idImagenMenu" ColumnName="idImagenMenu" />
+                <ScalarProperty Name="codigoCss" ColumnName="codigoCss" />
+                <ScalarProperty Name="idCategoria" ColumnName="idCategoria" />
+                <ScalarProperty Name="banActivo" ColumnName="banActivo" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="spIVSUsuariosIn" FunctionName="CMX360SeguridadModel.Store.spIVSUsuariosIn" />
+          <FunctionImportMapping FunctionImportName="spIVXLoginLocal" FunctionName="CMX360SeguridadModel.Store.spIVXLoginLocal">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="CMX360SeguridadModel.spIVXLoginLocal_Result">
+                <ScalarProperty Name="usrAPP" ColumnName="usrAPP" />
+                <ScalarProperty Name="nomNombre" ColumnName="nomNombre" />
+                <ScalarProperty Name="nomAPaterno" ColumnName="nomAPaterno" />
+                <ScalarProperty Name="nomAMaterno" ColumnName="nomAMaterno" />
+                <ScalarProperty Name="correo" ColumnName="correo" />
+                <ScalarProperty Name="ProviderKey" ColumnName="ProviderKey" />
+                <ScalarProperty Name="Provider" ColumnName="Provider" />
+                <ScalarProperty Name="banActivo" ColumnName="banActivo" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="contraseña" ColumnName="contraseña" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="spIVXUsuariosCn" FunctionName="CMX360SeguridadModel.Store.spIVXUsuariosCn">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="CMX360SeguridadModel.spIVXUsuariosCn_Result">
+                <ScalarProperty Name="usrAPP" ColumnName="usrAPP" />
+                <ScalarProperty Name="nomNombre" ColumnName="nomNombre" />
+                <ScalarProperty Name="nomAPaterno" ColumnName="nomAPaterno" />
+                <ScalarProperty Name="nomAMaterno" ColumnName="nomAMaterno" />
+                <ScalarProperty Name="correo" ColumnName="correo" />
+                <ScalarProperty Name="ProviderKey" ColumnName="ProviderKey" />
+                <ScalarProperty Name="Provider" ColumnName="Provider" />
+                <ScalarProperty Name="banActivo" ColumnName="banActivo" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="contraseña" ColumnName="contraseña" />
+                <ScalarProperty Name="LlaveActicacion" ColumnName="LlaveActicacion" />
+                <ScalarProperty Name="FechaCadudaLlave" ColumnName="FechaCadudaLlave" />
+                <ScalarProperty Name="FechaCorreoValidado" ColumnName="FechaCorreoValidado" />
+                <ScalarProperty Name="CorreoValidado" ColumnName="CorreoValidado" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="spPaginaPermisoRolCn" FunctionName="CMX360SeguridadModel.Store.spPaginaPermisoRolCn">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="CMX360SeguridadModel.spPaginaPermisoRolCn_Result">
+                <ScalarProperty Name="idPagina" ColumnName="idPagina" />
+                <ScalarProperty Name="idPermiso" ColumnName="idPermiso" />
+                <ScalarProperty Name="nomPermiso" ColumnName="nomPermiso" />
+                <ScalarProperty Name="idRol" ColumnName="idRol" />
+                <ScalarProperty Name="nomRol" ColumnName="nomRol" />
+                <ScalarProperty Name="banActivo" ColumnName="banActivo" />
+                <ScalarProperty Name="usrAlta" ColumnName="usrAlta" />
+                <ScalarProperty Name="fecAlta" ColumnName="fecAlta" />
+                <ScalarProperty Name="usrMod" ColumnName="usrMod" />
+                <ScalarProperty Name="fecMod" ColumnName="fecMod" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="spPaginaPermisoRolEl" FunctionName="CMX360SeguridadModel.Store.spPaginaPermisoRolEl" />
+          <FunctionImportMapping FunctionImportName="spPaginasRolCn" FunctionName="CMX360SeguridadModel.Store.spPaginasRolCn">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="CMX360SeguridadModel.spPaginasRolCn_Result">
+                <ScalarProperty Name="idPagina" ColumnName="idPagina" />
+                <ScalarProperty Name="idPaginaPadre" ColumnName="idPaginaPadre" />
+                <ScalarProperty Name="nomPagina" ColumnName="nomPagina" />
+                <ScalarProperty Name="nomMenu" ColumnName="nomMenu" />
+                <ScalarProperty Name="url" ColumnName="url" />
+                <ScalarProperty Name="imgMenu" ColumnName="imgMenu" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="spRESCambioContrasenia" FunctionName="CMX360SeguridadModel.Store.spRESCambioContrasenia" />
+          <FunctionImportMapping FunctionImportName="spRESCnaPermisoEspecial" FunctionName="CMX360SeguridadModel.Store.spRESCnaPermisoEspecial">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="CMX360SeguridadModel.spRESCnaPermisoEspecial_Result">
+                <ScalarProperty Name="usrAPP" ColumnName="usrAPP" />
+                <ScalarProperty Name="idPagina" ColumnName="idPagina" />
+                <ScalarProperty Name="idPermiso" ColumnName="idPermiso" />
+                <ScalarProperty Name="banActivo" ColumnName="banActivo" />
+                <ScalarProperty Name="usrAlta" ColumnName="usrAlta" />
+                <ScalarProperty Name="fecAlta" ColumnName="fecAlta" />
+                <ScalarProperty Name="usrMod" ColumnName="usrMod" />
+                <ScalarProperty Name="fecMod" ColumnName="fecMod" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="spRESCnaRolPaginaPermiso" FunctionName="CMX360SeguridadModel.Store.spRESCnaRolPaginaPermiso">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="CMX360SeguridadModel.spRESCnaRolPaginaPermiso_Result">
+                <ScalarProperty Name="idRol" ColumnName="idRol" />
+                <ScalarProperty Name="idPagina" ColumnName="idPagina" />
+                <ScalarProperty Name="idPermiso" ColumnName="idPermiso" />
+                <ScalarProperty Name="banActivo" ColumnName="banActivo" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="spRESCnaRolUsuario" FunctionName="CMX360SeguridadModel.Store.spRESCnaRolUsuario">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="CMX360SeguridadModel.spRESCnaRolUsuario_Result">
+                <ScalarProperty Name="idRol" ColumnName="idRol" />
+                <ScalarProperty Name="nomRol" ColumnName="nomRol" />
+                <ScalarProperty Name="nomNombre" ColumnName="nomNombre" />
+                <ScalarProperty Name="nomAPaterno" ColumnName="nomAPaterno" />
+                <ScalarProperty Name="nomAMaterno" ColumnName="nomAMaterno" />
+                <ScalarProperty Name="pagInicio" ColumnName="pagInicio" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="spRESCncAplicacion" FunctionName="CMX360SeguridadModel.Store.spRESCncAplicacion">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="CMX360SeguridadModel.spRESCncAplicacion_Result">
+                <ScalarProperty Name="idAplicacion" ColumnName="idAplicacion" />
+                <ScalarProperty Name="nomAplicacion" ColumnName="nomAplicacion" />
+                <ScalarProperty Name="xmlParametros" ColumnName="xmlParametros" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="spRESCncPagina" FunctionName="CMX360SeguridadModel.Store.spRESCncPagina">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="CMX360SeguridadModel.spRESCncPagina_Result">
+                <ScalarProperty Name="idPagina" ColumnName="idPagina" />
+                <ScalarProperty Name="nomPagina" ColumnName="nomPagina" />
+                <ScalarProperty Name="nomMenu" ColumnName="nomMenu" />
+                <ScalarProperty Name="url" ColumnName="url" />
+                <ScalarProperty Name="banActivo" ColumnName="banActivo" />
+                <ScalarProperty Name="idPaginaPadre" ColumnName="idPaginaPadre" />
+                <ScalarProperty Name="imgMenu" ColumnName="imgMenu" />
+                <ScalarProperty Name="nomMenuPadre" ColumnName="nomMenuPadre" />
+                <ScalarProperty Name="fecAlta" ColumnName="fecAlta" />
+                <ScalarProperty Name="usrAlta" ColumnName="usrAlta" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="spRESCncPaginaPermiso" FunctionName="CMX360SeguridadModel.Store.spRESCncPaginaPermiso">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="CMX360SeguridadModel.spRESCncPaginaPermiso_Result">
+                <ScalarProperty Name="idPagina" ColumnName="idPagina" />
+                <ScalarProperty Name="idPermiso" ColumnName="idPermiso" />
+                <ScalarProperty Name="banActivo" ColumnName="banActivo" />
+                <ScalarProperty Name="usrAlta" ColumnName="usrAlta" />
+                <ScalarProperty Name="fecAlta" ColumnName="fecAlta" />
+                <ScalarProperty Name="usrMod" ColumnName="usrMod" />
+                <ScalarProperty Name="fecMod" ColumnName="fecMod" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="spRESCncPermiso" FunctionName="CMX360SeguridadModel.Store.spRESCncPermiso">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="CMX360SeguridadModel.spRESCncPermiso_Result">
+                <ScalarProperty Name="idPermiso" ColumnName="idPermiso" />
+                <ScalarProperty Name="nomPermiso" ColumnName="nomPermiso" />
+                <ScalarProperty Name="banActivo" ColumnName="banActivo" />
+                <ScalarProperty Name="usrAlta" ColumnName="usrAlta" />
+                <ScalarProperty Name="fecAlta" ColumnName="fecAlta" />
+                <ScalarProperty Name="usrMod" ColumnName="usrMod" />
+                <ScalarProperty Name="fecMod" ColumnName="fecMod" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="spRESCncRol" FunctionName="CMX360SeguridadModel.Store.spRESCncRol">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="CMX360SeguridadModel.spRESCncRol_Result">
+                <ScalarProperty Name="idRol" ColumnName="idRol" />
+                <ScalarProperty Name="nomRol" ColumnName="nomRol" />
+                <ScalarProperty Name="banActivo" ColumnName="banActivo" />
+                <ScalarProperty Name="usrAlta" ColumnName="usrAlta" />
+                <ScalarProperty Name="fecAlta" ColumnName="fecAlta" />
+                <ScalarProperty Name="usrMod" ColumnName="usrMod" />
+                <ScalarProperty Name="fecMod" ColumnName="fecMod" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="spRESCtaAplicacionRol" FunctionName="CMX360SeguridadModel.Store.spRESCtaAplicacionRol">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="CMX360SeguridadModel.spRESCtaAplicacionRol_Result">
+                <ScalarProperty Name="idAplicacion" ColumnName="idAplicacion" />
+                <ScalarProperty Name="idRol" ColumnName="idRol" />
+                <ScalarProperty Name="nomRol" ColumnName="nomRol" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="spRESCtaBackProcess" FunctionName="CMX360SeguridadModel.Store.spRESCtaBackProcess" />
+          <FunctionImportMapping FunctionImportName="spRESCtaBackProcessLog" FunctionName="CMX360SeguridadModel.Store.spRESCtaBackProcessLog" />
+          <FunctionImportMapping FunctionImportName="spRESCtaBackProcessLogUltimaEjecucion" FunctionName="CMX360SeguridadModel.Store.spRESCtaBackProcessLogUltimaEjecucion" />
+          <FunctionImportMapping FunctionImportName="spRESCtaLogError" FunctionName="CMX360SeguridadModel.Store.spRESCtaLogError">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="CMX360SeguridadModel.spRESCtaLogError_Result">
+                <ScalarProperty Name="idLogError" ColumnName="idLogError" />
+                <ScalarProperty Name="idCapa" ColumnName="idCapa" />
+                <ScalarProperty Name="idSeveridad" ColumnName="idSeveridad" />
+                <ScalarProperty Name="idAplicacion" ColumnName="idAplicacion" />
+                <ScalarProperty Name="server" ColumnName="server" />
+                <ScalarProperty Name="nomPagina" ColumnName="nomPagina" />
+                <ScalarProperty Name="Metodo" ColumnName="Metodo" />
+                <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="spRESCtaPermisoEspecial" FunctionName="CMX360SeguridadModel.Store.spRESCtaPermisoEspecial">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="CMX360SeguridadModel.spRESCtaPermisoEspecial_Result">
+                <ScalarProperty Name="usrAPP" ColumnName="usrAPP" />
+                <ScalarProperty Name="idPagina" ColumnName="idPagina" />
+                <ScalarProperty Name="idPermiso" ColumnName="idPermiso" />
+                <ScalarProperty Name="banActivo" ColumnName="banActivo" />
+                <ScalarProperty Name="usrAlta" ColumnName="usrAlta" />
+                <ScalarProperty Name="fecAlta" ColumnName="fecAlta" />
+                <ScalarProperty Name="usrMod" ColumnName="usrMod" />
+                <ScalarProperty Name="fecMod" ColumnName="fecMod" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="spRESCtcAplicacion" FunctionName="CMX360SeguridadModel.Store.spRESCtcAplicacion">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="CMX360SeguridadModel.spRESCtcAplicacion_Result">
+                <ScalarProperty Name="idAplicacion" ColumnName="idAplicacion" />
+                <ScalarProperty Name="nomAplicacion" ColumnName="nomAplicacion" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="spRESCtcPagina" FunctionName="CMX360SeguridadModel.Store.spRESCtcPagina">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="CMX360SeguridadModel.spRESCtcPagina_Result">
+                <ScalarProperty Name="idPagina" ColumnName="idPagina" />
+                <ScalarProperty Name="nomPagina" ColumnName="nomPagina" />
+                <ScalarProperty Name="nomMenu" ColumnName="nomMenu" />
+                <ScalarProperty Name="url" ColumnName="url" />
+                <ScalarProperty Name="banActivo" ColumnName="banActivo" />
+                <ScalarProperty Name="usrAlta" ColumnName="usrAlta" />
+                <ScalarProperty Name="fecAlta" ColumnName="fecAlta" />
+                <ScalarProperty Name="usrMod" ColumnName="usrMod" />
+                <ScalarProperty Name="fecMod" ColumnName="fecMod" />
+                <ScalarProperty Name="idPaginaPadre" ColumnName="idPaginaPadre" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="spRESCtcPaginaPermiso" FunctionName="CMX360SeguridadModel.Store.spRESCtcPaginaPermiso">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="CMX360SeguridadModel.spRESCtcPaginaPermiso_Result">
+                <ScalarProperty Name="idPagina" ColumnName="idPagina" />
+                <ScalarProperty Name="idPermiso" ColumnName="idPermiso" />
+                <ScalarProperty Name="banActivo" ColumnName="banActivo" />
+                <ScalarProperty Name="usrAlta" ColumnName="usrAlta" />
+                <ScalarProperty Name="fecAlta" ColumnName="fecAlta" />
+                <ScalarProperty Name="usrMod" ColumnName="usrMod" />
+                <ScalarProperty Name="fecMod" ColumnName="fecMod" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="spRESCtcPermiso" FunctionName="CMX360SeguridadModel.Store.spRESCtcPermiso">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="CMX360SeguridadModel.spRESCtcPermiso_Result">
+                <ScalarProperty Name="idPermiso" ColumnName="idPermiso" />
+                <ScalarProperty Name="nomPermiso" ColumnName="nomPermiso" />
+                <ScalarProperty Name="banActivo" ColumnName="banActivo" />
+                <ScalarProperty Name="usrAlta" ColumnName="usrAlta" />
+                <ScalarProperty Name="fecAlta" ColumnName="fecAlta" />
+                <ScalarProperty Name="usrMod" ColumnName="usrMod" />
+                <ScalarProperty Name="fecMod" ColumnName="fecMod" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="spRESCtcRol" FunctionName="CMX360SeguridadModel.Store.spRESCtcRol">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="CMX360SeguridadModel.spRESCtcRol_Result">
+                <ScalarProperty Name="idRol" ColumnName="idRol" />
+                <ScalarProperty Name="nomRol" ColumnName="nomRol" />
+                <ScalarProperty Name="banActivo" ColumnName="banActivo" />
+                <ScalarProperty Name="usrAlta" ColumnName="usrAlta" />
+                <ScalarProperty Name="fecAlta" ColumnName="fecAlta" />
+                <ScalarProperty Name="usrMod" ColumnName="usrMod" />
+                <ScalarProperty Name="fecMod" ColumnName="fecMod" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="spRESCtUsuarios" FunctionName="CMX360SeguridadModel.Store.spRESCtUsuarios">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="CMX360SeguridadModel.spRESCtUsuarios_Result">
+                <ScalarProperty Name="usrAPP" ColumnName="usrAPP" />
+                <ScalarProperty Name="nomNombre" ColumnName="nomNombre" />
+                <ScalarProperty Name="nomAPaterno" ColumnName="nomAPaterno" />
+                <ScalarProperty Name="nomAMaterno" ColumnName="nomAMaterno" />
+                <ScalarProperty Name="banActivo" ColumnName="banActivo" />
+                <ScalarProperty Name="idRol" ColumnName="idRol" />
+                <ScalarProperty Name="nomRol" ColumnName="nomRol" />
+                <ScalarProperty Name="idAplicacion" ColumnName="idAplicacion" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="spRESDeaEstautsBackProcess" FunctionName="CMX360SeguridadModel.Store.spRESDeaEstautsBackProcess" />
+          <FunctionImportMapping FunctionImportName="spRESDelaRolUsuario" FunctionName="CMX360SeguridadModel.Store.spRESDelaRolUsuario" />
+          <FunctionImportMapping FunctionImportName="spRESEdaBackProcess" FunctionName="CMX360SeguridadModel.Store.spRESEdaBackProcess" />
+          <FunctionImportMapping FunctionImportName="spRESEdaEstautsBackProcess" FunctionName="CMX360SeguridadModel.Store.spRESEdaEstautsBackProcess" />
+          <FunctionImportMapping FunctionImportName="spRESEdaPermisoEspecial" FunctionName="CMX360SeguridadModel.Store.spRESEdaPermisoEspecial" />
+          <FunctionImportMapping FunctionImportName="spRESEdaRolPaginaPermiso" FunctionName="CMX360SeguridadModel.Store.spRESEdaRolPaginaPermiso" />
+          <FunctionImportMapping FunctionImportName="spRESEdcAplicacion" FunctionName="CMX360SeguridadModel.Store.spRESEdcAplicacion" />
+          <FunctionImportMapping FunctionImportName="spRESEdcPagina" FunctionName="CMX360SeguridadModel.Store.spRESEdcPagina" />
+          <FunctionImportMapping FunctionImportName="spRESEdcPaginaPermiso" FunctionName="CMX360SeguridadModel.Store.spRESEdcPaginaPermiso" />
+          <FunctionImportMapping FunctionImportName="spRESEdcPermiso" FunctionName="CMX360SeguridadModel.Store.spRESEdcPermiso" />
+          <FunctionImportMapping FunctionImportName="spRESEdcRol" FunctionName="CMX360SeguridadModel.Store.spRESEdcRol" />
+          <FunctionImportMapping FunctionImportName="spRESEdUsuarios" FunctionName="CMX360SeguridadModel.Store.spRESEdUsuarios" />
+          <FunctionImportMapping FunctionImportName="spRESICnPaginasXUsuario" FunctionName="CMX360SeguridadModel.Store.spRESICnPaginasXUsuario">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="CMX360SeguridadModel.spRESICnPaginasXUsuario_Result">
+                <ScalarProperty Name="idPagina" ColumnName="idPagina" />
+                <ScalarProperty Name="idPaginaPadre" ColumnName="idPaginaPadre" />
+                <ScalarProperty Name="nomMenu" ColumnName="nomMenu" />
+                <ScalarProperty Name="imgMenu" ColumnName="imgMenu" />
+                <ScalarProperty Name="url" ColumnName="url" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="spRESICnPermisosPaginaXUsuario" FunctionName="CMX360SeguridadModel.Store.spRESICnPermisosPaginaXUsuario" />
+          <FunctionImportMapping FunctionImportName="spRESInaAplicacionRol" FunctionName="CMX360SeguridadModel.Store.spRESInaAplicacionRol" />
+          <FunctionImportMapping FunctionImportName="spRESInaBackProcess" FunctionName="CMX360SeguridadModel.Store.spRESInaBackProcess" />
+          <FunctionImportMapping FunctionImportName="spRESInaBackProcessLog" FunctionName="CMX360SeguridadModel.Store.spRESInaBackProcessLog" />
+          <FunctionImportMapping FunctionImportName="spRESInaLogError" FunctionName="CMX360SeguridadModel.Store.spRESInaLogError" />
+          <FunctionImportMapping FunctionImportName="spRESInaPermisoEspecial" FunctionName="CMX360SeguridadModel.Store.spRESInaPermisoEspecial" />
+          <FunctionImportMapping FunctionImportName="spRESInaRolPaginaPermiso" FunctionName="CMX360SeguridadModel.Store.spRESInaRolPaginaPermiso" />
+          <FunctionImportMapping FunctionImportName="spRESInaRolUsuario" FunctionName="CMX360SeguridadModel.Store.spRESInaRolUsuario" />
+          <FunctionImportMapping FunctionImportName="spRESIncAplicacion" FunctionName="CMX360SeguridadModel.Store.spRESIncAplicacion" />
+          <FunctionImportMapping FunctionImportName="spRESIncPagina" FunctionName="CMX360SeguridadModel.Store.spRESIncPagina" />
+          <FunctionImportMapping FunctionImportName="spRESIncPaginaPermiso" FunctionName="CMX360SeguridadModel.Store.spRESIncPaginaPermiso" />
+          <FunctionImportMapping FunctionImportName="spRESIncPermiso" FunctionName="CMX360SeguridadModel.Store.spRESIncPermiso" />
+          <FunctionImportMapping FunctionImportName="spRESIncRol" FunctionName="CMX360SeguridadModel.Store.spRESIncRol" />
+          <FunctionImportMapping FunctionImportName="spRESInUsuarios" FunctionName="CMX360SeguridadModel.Store.spRESInUsuarios" />
+          <FunctionImportMapping FunctionImportName="spRESLoginMD5" FunctionName="CMX360SeguridadModel.Store.spRESLoginMD5" />
+          <FunctionImportMapping FunctionImportName="spRolesCn" FunctionName="CMX360SeguridadModel.Store.spRolesCn">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="CMX360SeguridadModel.spRolesCn_Result">
+                <ScalarProperty Name="idRol" ColumnName="idRol" />
+                <ScalarProperty Name="nomRol" ColumnName="nomRol" />
+                <ScalarProperty Name="pagInicio" ColumnName="pagInicio" />
+                <ScalarProperty Name="banActivo" ColumnName="banActivo" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="spRolesEd" FunctionName="CMX360SeguridadModel.Store.spRolesEd" />
+          <FunctionImportMapping FunctionImportName="spRolesEl" FunctionName="CMX360SeguridadModel.Store.spRolesEl" />
+          <FunctionImportMapping FunctionImportName="spRolesIn" FunctionName="CMX360SeguridadModel.Store.spRolesIn" />
+          <FunctionImportMapping FunctionImportName="spUsuarioAc" FunctionName="CMX360SeguridadModel.Store.spUsuarioAc" />
+          <FunctionImportMapping FunctionImportName="spUsuarioEd" FunctionName="CMX360SeguridadModel.Store.spUsuarioEd" />
+          <FunctionImportMapping FunctionImportName="spUsuarioIn" FunctionName="CMX360SeguridadModel.Store.spUsuarioIn" />
+          <FunctionImportMapping FunctionImportName="spUsuariosNombreCn" FunctionName="CMX360SeguridadModel.Store.spUsuariosNombreCn">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="CMX360SeguridadModel.spUsuariosNombreCn_Result">
+                <ScalarProperty Name="NumEmpleado" ColumnName="NumEmpleado" />
+                <ScalarProperty Name="usrAPP" ColumnName="usrAPP" />
+                <ScalarProperty Name="nomNombre" ColumnName="nomNombre" />
+                <ScalarProperty Name="nomAPaterno" ColumnName="nomAPaterno" />
+                <ScalarProperty Name="nomAMaterno" ColumnName="nomAMaterno" />
+                <ScalarProperty Name="banActivo" ColumnName="banActivo" />
+                <ScalarProperty Name="idRol" ColumnName="idRol" />
+                <ScalarProperty Name="nomRol" ColumnName="nomRol" />
+                <ScalarProperty Name="idAplicacion" ColumnName="idAplicacion" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="Ninguno" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
